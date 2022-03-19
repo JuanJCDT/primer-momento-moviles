@@ -1,0 +1,16 @@
+.carousel-inner img {
+    width: 100%;
+    max-height: 513px;
+}
+
+.carousel-inner {
+    height: 513px;
+}
+
+.modal-dialog {
+    max-width: 1200px !important;
+}
+
+.carousel-caption {
+    background-color: #0000006c;
+}
