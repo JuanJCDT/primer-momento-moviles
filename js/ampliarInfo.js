@@ -11,7 +11,7 @@ export function AmpliarInformacion(event) {
             descripcion: event.target.parentElement.querySelector("p").textContent
         }
 
-        console.log(producto)
+        //console.log(producto)
 
         let foto = document.getElementById("fotoinfo")
         foto.src = producto.foto
@@ -21,5 +21,7 @@ export function AmpliarInformacion(event) {
         precio.textContent = producto.precio
         let descripcion = document.getElementById("descripcioninfo")
         descripcion.textContent = producto.descripcion
+
     }
+    return producto
 }
