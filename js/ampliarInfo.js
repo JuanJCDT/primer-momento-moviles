@@ -3,7 +3,6 @@ export function AmpliarInformacion(event) {
     if (event.target.classList.contains("btn")) {
         let modalinfoproducto = new bootstrap.Modal(document.getElementById('modalinfoproducto'))
         modalinfoproducto.show()
-
         producto = {
             foto: event.target.parentElement.querySelector("img").src,
             nombre: event.target.parentElement.querySelector("h4").textContent,
