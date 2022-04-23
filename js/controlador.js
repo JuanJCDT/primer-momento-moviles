@@ -45,6 +45,11 @@ limpiarcarrito.addEventListener("click", function(event) {
     carrito = []
     let capsula = document.getElementById("capsula")
     capsula.textContent = 0
+
+    //poner en 0 el valor total del carrito
+    totalCuenta.textContent = "Total de la cuenta: " + 0
+    conversor.textContent = "Total en dolares: " + 0 + " | "
+
     capsula.classList.add("invisible")
 })
 
@@ -89,6 +94,22 @@ botonResumen.addEventListener("click", function(event) {
         let subtotal = document.createElement("h5")
         subtotal.textContent = "Valor total: " + producto.cantidad * producto.precio
         subtotal.classList.add("text-center")
+
+        //sumar los subtotales de los productos en el array
+        let total = 0
+        carrito.forEach(function(producto) {
+            total = total + Number(producto.cantidad) * Number(producto.precio)
+        });
+
+        let totalCuenta = document.getElementById("totalCuenta")
+        totalCuenta.textContent = "Total de la cuenta: " + total
+        totalCuenta.classList.add("text-center")
+
+        //convertir el total cuenta en dolares
+        let conversor = document.getElementById("conversor")
+        conversor.textContent = "Total en dolares: " + total * 0.00026 + " | "
+        conversor.classList.add("text-center")
+        conversor.textContent = conversor.textContent.substring(0, conversor.textContent.indexOf(".") + 3)
 
         columna1.appendChild(foto)
         fila.appendChild(columna1)
